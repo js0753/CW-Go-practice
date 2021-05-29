@@ -2,7 +2,13 @@ package main
 
 import "fmt"
 
-type teldir map[string]int
+type teldir map[int]Entry
+type Entry struct {
+	name    string
+	number  int
+	email   string
+	address string
+}
 
 func (t *teldir) add(name string, number int) {
 	if (*t)[name] == 0 {
@@ -31,11 +37,6 @@ func (t teldir) print() {
 	for name, num := range t {
 		fmt.Println(name, num)
 	}
-}
-
-type Entry struct {
-	name   string
-	number int
 }
 
 func (t teldir) find_dup() {
