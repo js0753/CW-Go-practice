@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type teldir map[int]Entry
+//type teldir map[int]Entry
 type Entry struct {
 	name    string
 	number  int
